@@ -7,17 +7,17 @@ require "hydradam/version"
 Gem::Specification.new do |s|
   s.name        = "hydradam"
   s.version     = Hydradam::VERSION
-  s.authors     = ["Andrew Myers"]
+  s.authors     = ["Andrew Myers", "Amol Khedkar", "Randall Floyd", "Daniel Pierce"]
   s.email       = ["afredmyers@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Hydradam."
-  s.description = "TODO: Description of Hydradam."
+  s.summary     = "Digital Asset Management for Hydra"
+  s.description = "Digital Asset Management for Hydra"
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 4.2.7"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rspec-rails"
 end
