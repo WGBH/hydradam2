@@ -1,4 +1,17 @@
-# desc "Explaining what the task does"
-# task :hydradam do
-#   # Task goes here
-# end
+require 'solr_wrapper'
+require 'fcrepo_wrapper'
+require 'active_fedora/rake_support'
+
+namespace :hydradam do
+  desc "Start development servers"
+  task :dev_servers do
+    with_server('development') do
+      begin
+        sleep
+      rescue Interrupt
+        puts "Stopping development servers"
+      end
+
+    end
+  end
+end
