@@ -7,7 +7,7 @@ module Hydradam
     def models
       # Append FileSet to the list of models that should be returned in a
       # basic search.
-      super + [::FileSet.to_class_uri]
+      super + [::FileSet]
     end
   end
 end

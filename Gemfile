@@ -48,5 +48,6 @@ else
 end
 # END ENGINE_CART BLOCK
 
-# Pull latest from github
-gem 'curation_concerns', github: 'projecthydra/curation_concerns', branch: 'master'
+group :development, :test do
+  gem 'pry-rails'
+end
