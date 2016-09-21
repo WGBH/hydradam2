@@ -9,3 +9,5 @@ test/dummy/.sass-cache
 Gemfile.lock
 
 .internal_test_app
+tmp/
+!tmp/.gitkeep
