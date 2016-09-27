@@ -16,21 +16,13 @@
             generate 'hydradam:install'
           end
 
-          def solr_wrapper_config
-            copy_file '.solr_wrapper.yml', '.solr_wrapper.yml'
-            # Remove .solr_wrapper if it exists, because it can conflict with
-            # our .solr_wrapper.yml.
-            `rm .solr_wrapper` if File.exists? '.solr_wrapper'
-          end
-
-          def fcrepo_wrapper_config
-            copy_file '.fcrepo_wrapper.yml', '.fcrepo_wrapper.yml'
-            # Remove .fcrepo_wrapper if it exists, because it can conflict with
-            # our .fcrepo_wrapper.yml.
-            `rm .fcrepo_wrapper` if File.exists? '.fcrepo_wrapper'
-          end
-
-          def database_config
-            copy_file 'config/database.yml', 'config/database.yml'
+          def development_env_config
+            if(ENV['RAILS_ENV'] == 'development')
+              copy_file '.solr_wrapper.yml', '.solr_wrapper.yml', force: true
+              `rm .solr_wrapper` if File.exists? '.solr_wrapper'
+              copy_file '.fcrepo_wrapper.yml', '.fcrepo_wrapper.yml', force: true
+              `rm .fcrepo_wrapper` if File.exists? '.fcrepo_wrapper'
+              copy_file 'config/database.yml', 'config/database.yml'
+            end
           end
         end
