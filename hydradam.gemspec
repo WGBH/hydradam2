@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 4.2.7"
-  s.add_dependency "curation_concerns"
+  s.add_dependency "curation_concerns", "~> 1.6.2"
   s.add_dependency 'rdf', '~> 1.99'
 
   s.add_development_dependency "sqlite3"
